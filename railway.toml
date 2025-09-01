@@ -1,11 +1,15 @@
 [build]
 builder = "NIXPACKS"
 
+[build.nixpacks]
+provider = "python"
+
 [deploy]
 healthcheckPath = "/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
+numReplicas = 1
 
 [env]
 PORT = "5001"
@@ -13,3 +17,5 @@ FLASK_ENV = "production"
 DEBUG = "false"
 PYTHONUNBUFFERED = "1"
 PYTHONDONTWRITEBYTECODE = "1"
+PIP_NO_CACHE_DIR = "1"
+PIP_DISABLE_PIP_VERSION_CHECK = "1"

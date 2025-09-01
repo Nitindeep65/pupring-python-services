@@ -1,0 +1,80 @@
+# Railway Ignore File - Reduce deployment size
+
+# Docker files (using Railway native builder)
+Dockerfile*
+.dockerignore
+docker-compose.yml
+
+# Development files
+*.md
+README*
+*.txt
+!requirements.txt
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Test files
+test/
+tests/
+*test.py
+*_test.py
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Large files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+
+# Temporary files
+temp/
+tmp/
+uploads/
+output/
+cache/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment files
+.env*
+!.env.example
