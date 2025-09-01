@@ -1,21 +1,9 @@
-# PupRing AI Python Services - Lightweight Requirements
-# Optimized for Railway deployment
+# Ultra-Minimal Requirements for Railway
+# Compatible with Python 3.12
 
-# Web Framework
-Flask==3.0.0
-Flask-CORS==4.0.0
-gunicorn==21.2.0
-
-# Core Image Processing
-Pillow==10.1.0
-numpy==1.24.3
-opencv-python-headless==4.8.1.78
-
-# Background Removal (lightweight)
-rembg==2.0.50
-
-# HTTP Requests
+Flask==3.0.3
+Flask-CORS==4.0.1
+gunicorn==22.0.0
+Pillow==10.3.0
 requests==2.31.0
-
-# Utilities
-python-dotenv==1.0.0
+python-dotenv==1.0.1
