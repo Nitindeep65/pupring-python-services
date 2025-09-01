@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  pupring-python-services:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - PORT=5001
+      - DEBUG=false
+      - FLASK_ENV=production
+    volumes:
+      # Mount for temporary file storage (optional)
+      - ./temp:/app/temp
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+
+  # Optional: Add Redis for caching (uncomment if needed)
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         memory: 256M
+
+networks:
+  default:
+    name: pupring-network
